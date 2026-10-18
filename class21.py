@@ -93,7 +93,7 @@ class Bank:
         richest = max(self._accounts, key=lambda account:account.balance)
 
 
-acc = BankAccount('N/A', 10000)
+acc = BankAccount('Ithasanamenow', 10000)
 acc.deposit(10000)
 acc.withdraw(5000)
 
