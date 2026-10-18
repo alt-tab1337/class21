@@ -10,7 +10,11 @@ class BankAccount:
         return self.owner
 
     def get_balance(self):
-        return self. balance
+        return self._balance
+
+    def display_account(self, owner):
+        if self.owner == owner:
+            print(f"{self.owner}, {self._balance}")
 
     def deposit(self, amount):
         if amount <= 0:
