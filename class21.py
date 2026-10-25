@@ -57,14 +57,14 @@ class Bank:
     def deposit_to(self, owner, amount):
         account = self.find_account(owner)
         if account is None:
-            print("Account not found.")
+            print("Account not found. Did you make a typo?")
             return
         account.deposit(amount)
 
     def withdraw_from(self, owner, amount):
         account = self.find_account(owner)
         if account is None:
-            print("Account not found.")
+            print("Account not found. Did you make a typo?")
             return
         account.withdraw(amount)
 
@@ -73,7 +73,7 @@ class Bank:
 
     def list_accounts(self):
         if not self._accounts:
-            print("No accounts yet.")
+            print("No accounts yet. Did you make a typo?")
             return
         for account in self._accounts:
             print(f"{account.get_owner()}: {account.get_balance()}")
@@ -81,7 +81,7 @@ class Bank:
     def close_account(self, owner):
         account = self.find_account(owner)
         if account is None:
-            print("Account not found.")
+            print("Account not found. Did you make a typo?")
             return
         account.remove()
 
