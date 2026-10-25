@@ -76,7 +76,7 @@ class Bank:
             print("No accounts yet. Did you make a typo?")
             return
         for account in self._accounts:
-            print(f"{account.get_owner()}: {account.get_balance()}")
+            print(f"{account.get_owner()}: ${account.get_balance():,.2f}")
 
     def close_account(self, owner):
         account = self.find_account(owner)
