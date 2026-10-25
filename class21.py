@@ -14,14 +14,14 @@ class BankAccount:
 
     def display_account(self, owner):
         if self.owner == owner:
-            print(f"{self.owner}, {self._balance}")
+            print(f"{self.owner}, ${self._balance:,.2f}")
 
     def deposit(self, amount):
         if amount <= 0:
             print("Deposit amount must be positive.")
             return
         self._balance += amount
-        print(f"Deposited {amount}. New balance: {self ._balance}")
+        print(f"Deposited {amount}. New balance: ${self ._balance:,.2f}")
         self._transactionhistory.append(f"Deposited {amount}")
 
     def withdraw(self, amount):
@@ -31,7 +31,7 @@ class BankAccount:
             print("Insufficient funds.")
         else:
             self._balance -= amount
-        print(f"Withdrew {amount}. New balance: {self._balance}")
+        print(f"Withdrew {amount}. New balance: ${self._balance:,.2f}")
         self._transactionhistory.append(f"Withdrew {amount}")
 
     def print_history(self):
@@ -46,7 +46,7 @@ class Bank:
         
         new_account = BankAccount(owner, balance)
         self._accounts.append(new_account)
-        print(f"Account opened for {owner}.")
+        print(f"Account opened for {owner}. Account opened with ${balance:,.2f}")
 
     def find_account(self, owner):
         for account in self._accounts:
